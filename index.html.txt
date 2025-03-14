@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantik Soru</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffebef;
+            font-family: 'Arial', sans-serif;
+        }
+        h1 {
+            color: #d6336c;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+        #no {
+            background-color: #ccc;
+            color: black;
+            position: absolute;
+        }
+        #message {
+            font-size: 20px;
+            color: #d6336c;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Benimle çıkar mısın? 💖</h1>
+        <button id="yes" onclick="showLove()">Evet</button>
+        <button id="no" onmouseover="moveNoButton()">Hayır</button>
+        <p id="message"></p>
+    </div>
+    <script>
+        function showLove() {
+            document.getElementById("message").innerHTML = "💖 Çoooook mutluyum! Seni seviyorum! 💖";
+        }
+        function moveNoButton() {
+            let button = document.getElementById("no");
+            let x = Math.random() * (window.innerWidth - button.clientWidth);
+            let y = Math.random() * (window.innerHeight - button.clientHeight);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
